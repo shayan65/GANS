@@ -17,7 +17,7 @@ import numpy as np
 import os
 
 class DiscoGAN():
-    def __init__(self):
+    def __init__(self, dataset_name, data_loader):
         # Input shape
         self.img_rows = 128
         self.img_cols = 128
@@ -25,9 +25,8 @@ class DiscoGAN():
         self.img_shape = (self.img_rows, self.img_cols, self.channels)
 
         # Configure data loader
-        self.dataset_name = 'edges2shoes'
-        self.data_loader = DataLoader(dataset_name=self.dataset_name,
-                                      img_res=(self.img_rows, self.img_cols))
+        self.dataset_name = self.dataset_name
+        self.data_loader = self.data_loader
 
 
         # Calculate output shape of D (PatchGAN)
